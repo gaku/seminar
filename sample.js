@@ -117,8 +117,8 @@ function webMainLoop(req, res) {
 }
 
 var app_port = process.env.PORT || 8000;
-var evt_url = process.env.EVENT_URL;
-var evt_key = process.env.EVENT_KEY;
+var evt_url = 'http://sheltered-sea-39287.herokuapp.com/evt';
+var evt_key = '7gjW3w5OHg2gwESEZRgP8VnQ';
 
 http.createServer(function(req, res){  
   webMainLoop(req, res);
