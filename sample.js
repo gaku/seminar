@@ -108,7 +108,7 @@ function webMainLoop(req, res) {
   } else if (req.method = 'GET') {
     res.writeHeader(200, {"Content-Type": "text/html"});
     if (lastDeviceEventJson === null) {
-      res.write(doc1 + "No device event.\n" + doc2);
+      res.write(doc1 + "No device event !!!.\n" + doc2);
     } else {
       res.write(doc1 + JSON.stringify(lastDeviceEventJson) + doc2);
     }
