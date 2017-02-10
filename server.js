@@ -43,7 +43,7 @@ app.post('/evt', function(req, res) {
   res.sendStatus(200);
 });
 
-app.listen(3000, function() {
-  console.log('Express app listening on port 3000');
+app.listen(process.env.PORT || 8080, function() {
+  console.log('Express app listening on port 80');
 });
 
