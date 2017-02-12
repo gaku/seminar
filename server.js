@@ -30,8 +30,6 @@ var ctx = {data:[]};
 
 
 app.get('/', function(req, res) {
-  // res.send('Hello world');
-
   res.render('home', ctx);
 });
 
@@ -39,11 +37,13 @@ app.post('/evt', function(req, res) {
   console.log('Received an event');
   var event = req.body;
   console.log(event);
-  ctx.data.push(event.eventData.value); 
+  ctx.data.push({x: (new Date()).valueOf(), y: event.eventData.value}); 
   res.sendStatus(200);
 });
 
-app.listen(process.env.PORT || 8080, function() {
-  console.log('Express app listening on port 80');
+var port = process.env.PORT || 8080;
+
+app.listen(port, function() {
+  console.log('Express app listening on port ' + port);
 });
 

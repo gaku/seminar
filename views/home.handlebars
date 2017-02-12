@@ -1,6 +1,25 @@
-home
+<!DOCTYPEHTML>
+<html>
+<head>
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="visualization"></div>
+<script type="text/javascript">
 
-{{#each data}}
-  {{this}}
-{{/each}}
+  var container = document.getElementById('visualization');
+  var items = [
+    {{#each data}}
+    {x: {{this.x}}, y: {{this.y}} },
+    {{/each}}
+  ];
+
+  var dataset = new vis.DataSet(items);
+  var options = {};
+  var graph2d = new vis.Graph2d(container, dataset, options);
+</script>
+</body>
+</html>
 
